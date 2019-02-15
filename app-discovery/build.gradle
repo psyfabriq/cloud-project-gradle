@@ -1,0 +1,11 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.2.RELEASE'
+    id 'java'
+}
+
+apply from: "${gradleScriptDir}/route.gradle"
+apply from: "${gradleScriptDir}/fix-java-11.gradle"
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+}

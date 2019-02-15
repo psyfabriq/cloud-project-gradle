@@ -1,0 +1,9 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.2.RELEASE'
+    id 'java'
+}
+
+apply from: "${gradleScriptDir}/borderline.gradle"
+
+dependencies {
+}

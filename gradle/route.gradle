@@ -1,0 +1,4 @@
+apply from: "${gradleScriptDir}/core.gradle"
+dependencies {
+
+}

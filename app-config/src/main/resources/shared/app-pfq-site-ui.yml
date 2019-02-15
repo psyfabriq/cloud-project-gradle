@@ -1,0 +1,16 @@
+---
+info:
+  app:
+    name: App Site UI ${NUMBER_REPLICA:1}
+  developer:
+    name: Ilia Podstavkov
+    email: psyfabriqdev@gmail.com
+server:
+  port: 8803
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: ${DEFAULT_ZONE:http://localhost:8761/eureka/}
+...
