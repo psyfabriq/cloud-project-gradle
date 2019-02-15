@@ -22,7 +22,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@EnableJpaRepositories(value = "ru.psyfabriq")
+@EnableJpaRepositories(value = "${datasource.scan_pacage}")
 public class DbConfig implements WebMvcConfigurer {
     private final Logger logger = LoggerFactory.getLogger(DbConfig.class);
 
@@ -42,11 +42,13 @@ public class DbConfig implements WebMvcConfigurer {
 
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(
-            @Qualifier("dataSource") DataSource dataSource, @Value("${hibernate.max_fetch_depth}") String maxFetchDepth,
+            @Qualifier("dataSource") DataSource dataSource,
+            @Value("${hibernate.max_fetch_depth}") String maxFetchDepth,
             @Value("${hibernate.jdbc.fetch_size}") String fetchSize,
             @Value("${hibernate.jdbc.batch_size}") String batchSize,
             @Value("${hibernate.show_sql}") String showSql,
-            @Value("${hibernate.hb2ddl.auto}") String hb2ddl
+            @Value("${hibernate.hb2ddl.auto}") String hb2ddl,
+            @Value("${datasource.scan_pacage_entity}") String pacageEntity
 
     ) {
         // Создание класса фабрики, реализующей интерфейс
@@ -59,7 +61,7 @@ public class DbConfig implements WebMvcConfigurer {
         // постоянства
         factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         // Указание пакетов, в которых будут находиться классы-сущности
-        factory.setPackagesToScan("ru.psyfabriq.entity");
+        factory.setPackagesToScan(pacageEntity);
         // factory.setPersistenceUnitName("persistenceUnit");
         // Создание свойств для настройки Hibernate
         final Properties properties = new Properties();

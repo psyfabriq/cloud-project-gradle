@@ -4,6 +4,8 @@ plugins {
 }
 
 apply from: "${gradleScriptDir}/borderline.gradle"
+apply from: "${gradleScriptDir}/fix-java-11.gradle"
+
 
 dependencies {
     compile project(':library:db-config')

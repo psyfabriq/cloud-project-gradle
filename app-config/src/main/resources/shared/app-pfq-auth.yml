@@ -24,6 +24,8 @@ datasource:
   schema: ${DATABASE_SHEMA:user_sheme}
   username: ${DATABASE_USER:dbuser}
   password: ${DATABASE_PASS:userpass}
+  scan_pacage: ru.psyfabriq.auth
+  scan_pacage_entity: ru.psyfabriq.auth.entity
 hibernate:
   hb2ddl:
     auto: update
