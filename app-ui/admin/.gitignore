@@ -8,5 +8,3 @@
 *.iml
 *.ipr
 /out/
-
-/node_modules/
