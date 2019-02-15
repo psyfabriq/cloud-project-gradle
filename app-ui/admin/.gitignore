@@ -9,4 +9,4 @@
 *.ipr
 /out/
 
-
+/node_modules/
