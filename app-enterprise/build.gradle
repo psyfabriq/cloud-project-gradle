@@ -4,15 +4,13 @@ plugins {
 }
 
 apply from: "${gradleScriptDir}/borderline.gradle"
-apply from: "${gradleScriptDir}/fix-java-11.gradle"
-
+//apply from: "${gradleScriptDir}/fix-java-11.gradle"
 
 dependencies {
     compile project(':library:db-config')
     compile project(':library:log-aspect')
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE'
-
     implementation 'org.springframework.cloud:spring-cloud-starter-feign:1.4.6.RELEASE'
     implementation 'io.jsonwebtoken:jjwt:0.9.0'
 }
