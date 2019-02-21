@@ -4,8 +4,11 @@ plugins {
 }
 
 apply from: "${gradleScriptDir}/borderline.gradle"
+//apply from: "${gradleScriptDir}/fix-java-11.gradle"
 
 dependencies {
+    compile project(':library:db-config')
+    compile project(':library:log-aspect')
     implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
     implementation 'org.springframework.cloud:spring-cloud-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

@@ -2,7 +2,7 @@ apply from: "${gradleScriptDir}/core.gradle"
 
 ext {
     springOauth2 = '2.3.4.RELEASE'
-   // lombok       = '1.18.6'
+    lombok       = '1.18.6'
     log4jVersion = '1.2.17'
     slf4jVersion = '1.7.25'
     junitVersion = '4.12'
@@ -15,13 +15,16 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
     implementation "org.springframework.security.oauth:spring-security-oauth2:$springOauth2"
 
+   
+
     //compileOnly "org.projectlombok:lombok"
     //annotationProcessor "org.projectlombok:lombok"
-    compileOnly("org.projectlombok:lombok:1.16.10")
+    compileOnly("org.projectlombok:lombok:$lombok")
 
     testCompile "junit:junit:$junitVersion"
     runtime     "log4j:log4j:$log4jVersion"
     testRuntime "org.slf4j:slf4j-simple:$slf4jVersion"
+    testCompile 'org.assertj:assertj-core:3.4.1'
 
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
     compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.2'

@@ -12,4 +12,6 @@ include 'app-ui:site'
 findProject(':app-ui:site')?.name = 'site'
 include 'app-ui:admin'
 findProject(':app-ui:admin')?.name = 'admin'
+include 'library:j-message'
+findProject(':library:j-message')?.name = 'j-message'
 

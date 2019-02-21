@@ -40,6 +40,8 @@ datasource:
   schema: ${DATABASE_SHEMA:appdb}
   username: ${DATABASE_USER:appuser}
   password: ${DATABASE_PASS:apppassword}
+  scan_pacage: ru.psyfabriq.enterprise
+  scan_pacage_entity: ru.psyfabriq.enterprise.entity
 hibernate:
   hb2ddl:
     auto: update
